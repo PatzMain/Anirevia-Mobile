@@ -1,5 +1,28 @@
 # Patch notes
 
+## v0.2.3 — 16 October 2026
+
+### Simpler downloads
+
+- Just two views: Queue and Downloaded.
+- Each episode shows its progress and one main action, such as Pause, Resume or Play.
+- Open More for file details, Cancel and other options.
+- Paused downloads and problems stay easy to find.
+- The cleaner layout fits phones, tablets and desktop windows.
+
+### Skip the opening and ending
+
+- **Skip Opening** and **Skip Ending** appear during an anime opening or ending when matching timings are available.
+- Tap once to jump past that section. Undo lets you go back if you tapped by mistake.
+- Skipping the ending keeps scenes that come after its marked end.
+- Automatic opening skips remain optional in Settings. Manual skipping is the default.
+
+Some episodes do not have matching timing information, so the skip buttons may not appear for every episode.
+
+Your existing library, downloads and settings are kept.
+
+[Download v0.2.3](https://github.com/PatzMain/Anirevia-Mobile/releases/tag/v0.2.3)
+
 ## v0.2.2 — 16 October 2026
 
 A fresh look and smoother everyday use.
