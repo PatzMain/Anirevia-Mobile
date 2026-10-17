@@ -1,5 +1,20 @@
 # Patch notes
 
+## v0.2.4 — 17 October 2026
+
+A smaller download for Android, with your familiar player and offline library.
+
+### What's improved
+
+- A smaller APK for ARM64 phones, plus a universal APK for compatible phones and emulators.
+- The update page highlights the smaller phone APK when it matches your device.
+- A lighter app package with unused browser-player files removed.
+- Playback, subtitles and offline downloads have been checked again for this update.
+
+Use the ARM64 APK on a compatible phone, or choose universal when unsure. Updating remains optional; your saved episodes stay in place when you update over your existing installation.
+
+[Download v0.2.4](https://github.com/PatzMain/Anirevia-Mobile/releases/tag/v0.2.4)
+
 ## v0.2.3 — 16 October 2026
 
 ### Simpler downloads
