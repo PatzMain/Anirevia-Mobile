@@ -1,5 +1,24 @@
 # Patch notes
 
+## v0.2.6 — 18 October 2026
+
+Episodes now open directly in a redesigned mobile player.
+
+- The app's display name is **Anirevia**.
+- Playback starts in portrait with a 16:9 video above the episode details. Use the fullscreen control for landscape viewing; Back returns to portrait before leaving the episode.
+- Compact controls, an orange progress bar, and a single playback settings action make more room for the video.
+- Change SUB/DUB and streaming sources inside **Audio & captions**, with playback position and pause state retained. When the preferred audio is unavailable, choose an available version in the player.
+- Caption controls show readable language names, support regional language tags, and retain the source's selectable subtitle tracks. External WebVTT, SRT, SSA/ASS and TTML tracks use their appropriate media formats. Missing language metadata is described explicitly.
+- External captions load into the video renderer. Unavailable or malformed caption files are identified without blocking playback; another working track can still be selected.
+
+Caption availability still depends on the source. A source without a selectable caption track displays an explanation; subtitles already burned into the picture cannot be switched off. Download folder selection and automatic per-anime folders remain available.
+
+Install the ARM64 APK on a compatible ARM64 phone, or use the universal APK for ARM64 and x86_64. Both retain the existing application ID and signing key so they can update previous releases.
+
+The repository remains private and contains documentation and release downloads. Anonymous in-app update checks cannot read private GitHub releases.
+
+[Download v0.2.6](https://github.com/PatzMain/Anirevia-Mobile/releases/tag/v0.2.6)
+
 ## v0.2.5 — 18 October 2026
 
 Choose where your downloaded episodes go.
