@@ -1,5 +1,24 @@
 # Patch notes
 
+## v0.2.5 — 18 October 2026
+
+Choose where your downloaded episodes go.
+
+- Choose a download folder in Settings or before starting a batch, using Android's folder picker. The app remembers access across restarts.
+- Anirevia automatically creates a folder for each anime and saves episodes there as MP4 files. Each batch keeps its selected location.
+- Existing offline episodes can also be saved to your selected folder. Folder-save progress and failures appear beside the episode; retry a failed save without downloading the episode again.
+- Saved MP4 files remain in your chosen folder when you remove the app's offline copy or uninstall Anirevia. The app also keeps its offline copy for in-app playback, so allow space for both.
+
+External English WebVTT captions save beside the MP4. English captions carried inside an HLS/DASH manifest remain available in the app; SUB exports without those captions show a warning. Burned-in captions remain in the video.
+
+Android limits selection of storage roots and the Downloads root. Create or select a subfolder such as Downloads/Anirevia. If access is revoked or a drive is disconnected, select the folder again and retry saving. Existing files are not overwritten or removed.
+
+Install the ARM64 APK on a compatible ARM64 phone, or use the universal APK for ARM64 and x86_64. Both retain the existing application ID and signing key so they can update previous releases.
+
+The repository remains private and contains documentation and release downloads. Anonymous in-app update checks cannot read private GitHub releases.
+
+[Download v0.2.5](https://github.com/PatzMain/Anirevia-Mobile/releases/tag/v0.2.5)
+
 ## v0.2.4 — 17 October 2026
 
 A smaller download for Android, with your familiar player and offline library.
