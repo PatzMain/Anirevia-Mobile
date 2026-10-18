@@ -1,5 +1,24 @@
 # Patch notes
 
+## v0.2.7 — 18 October 2026
+
+Anime and episode selection now follow the same streaming-focused design as the player.
+
+- A charcoal palette, orange actions, larger artwork and compact navigation bring browsing and playback together while retaining Anirevia's branding.
+- Discover keeps search visible, with quick Trending, Popular, New and Top rated choices. Genre, season and status filters expand when needed, retain their URL state and can be reset.
+- Series pages show key artwork, a clear Watch/Resume action and separate Episodes and Details tabs. Episodes are visible before the full synopsis and metadata.
+- Wide episode thumbnails, readable titles and actual watch progress make choosing the next episode easier. A finished episode offers the next listed episode, including nonsequential and fractional numbers.
+- Offline download selection shows checkboxes only while saving episodes. Range and batch selection remain available, and selections survive tab changes. Changing series resets the selection controls together.
+- Source matches that need confirmation remain visible. Confirmed matches are compact and can be changed.
+
+Portrait playback, optional fullscreen, SUB/DUB and captions inside the player, chosen download folders and automatic per-anime folders remain available. Caption and source availability depend on the selected provider.
+
+Both signed APKs retain the application ID and signing key used by previous releases. Install the ARM64 APK on compatible ARM64 phones, or the universal APK for ARM64 and x86_64.
+
+The repository remains private and contains documentation and release downloads. Application source and signing credentials are not uploaded.
+
+[Download v0.2.7](https://github.com/PatzMain/Anirevia-Mobile/releases/tag/v0.2.7)
+
 ## v0.2.6 — 18 October 2026
 
 Episodes now open directly in a redesigned mobile player.
