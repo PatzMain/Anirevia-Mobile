@@ -1,5 +1,23 @@
 # Patch notes
 
+## v0.2.8 — 19 October 2026
+
+Smoother browsing and a portrait player that keeps episode selection close at hand.
+
+- Home shelves, anime details and episode loading use skeletons shaped like the content they replace. Selecting an anime shows its available artwork and title while the remaining details load.
+- Anime cards and search results open the series information and episode list. Playback starts after selecting an episode.
+- The portrait player now includes the series' episode list, with watch and Download buttons. Long lists are paginated, and fractional or nonsequential episode numbers are preserved.
+- Download opens the selected episode's existing audio, quality, caption and folder options with playback paused. Continue episode resumes the saved position. Fullscreen remains optional.
+- Fixed a reproduced Android 11 crash during MP4 preparation and compatibility problems affecting older Android System WebViews, including search parameters and loading styles.
+- Folder exports on Android 11 and older use platform-compatible MP4 formats, converting unsupported tracks when necessary. A failed folder save retains the app's offline copy for retry.
+- Added recovery screens for navigation and player startup failures.
+
+Both APKs retain the existing application ID and signing key and can update earlier releases. Choose the ARM64 APK for compatible ARM64 phones, including the Realme 6; the universal APK also supports x86_64 emulators.
+
+Validation passed: seven workspace typechecks, 228 frontend tests, 104 backend tests, 35 Android JVM tests, and all 12 signed-APK acceptance cases on both Android 11 and Android 16. Tests used public sample media. Physical Realme hardware and live anime-provider playback remain unverified; source and caption availability depend on the provider.
+
+[Download v0.2.8](https://github.com/PatzMain/Anirevia-Mobile/releases/tag/v0.2.8)
+
 ## v0.2.7 — 18 October 2026
 
 Anime and episode selection now follow the same streaming-focused design as the player.
