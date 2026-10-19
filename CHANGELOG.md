@@ -1,5 +1,25 @@
 # Patch notes
 
+## v0.2.9 — 19 October 2026
+
+One mobile flow: Home and search → a single portrait page with video, episodes, downloads and More to Explore.
+
+- Anime cards and search results open the portrait series page. Choose an episode to start playback in the player at the top; the episode list and recommendations stay below it.
+- Episode and streaming-source changes reuse the same player in the main screen. Fullscreen is optional and returns to the portrait page.
+- Source menus use a stable list and close when the episode or source list changes. Late source requests cannot reopen a page you left or replace a newer selection.
+- Fixed an Android 11 crash reproduced with streaming captions that have no track ID.
+- Audio and server choices stay selected. Changing a matched streaming version clears the previous playback and loads its episode list without autoplay.
+- Individual and batch downloads open from the episode list. The video pauses while download options or search are open and restores its previous playback state when they close.
+- Home, series and episode loading use skeletons. Long episode lists are paginated and retain fractional episode numbers.
+- Phone headers and bottom actions clear Android's status and navigation bars, including older Android 11 WebViews.
+- Includes the Android 11 export and older-WebView compatibility fixes from 0.2.8.
+
+Choose the ARM64 APK for the Realme 6. Both APKs retain the existing signing key and application ID and can update earlier releases.
+
+Validation passed: seven workspace typechecks, 233 frontend tests, 104 backend tests, 35 Android JVM tests, Rust command checks, and all 14 signed-APK acceptance cases on both Android 11 and Android 16. Validation uses public sample media and controlled catalog fixtures. Physical Realme 6 hardware and live anime-provider playback remain unverified; source and caption availability depend on the provider.
+
+[Download v0.2.9](https://github.com/PatzMain/Anirevia-Mobile/releases/tag/v0.2.9)
+
 ## v0.2.8 — 19 October 2026
 
 Smoother browsing and a portrait player that keeps episode selection close at hand.
