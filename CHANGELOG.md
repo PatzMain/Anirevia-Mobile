@@ -1,5 +1,23 @@
 # Patch notes
 
+## v0.2.10 — 21 October 2026
+
+Better phone spacing, episode source recovery, and a redesigned mobile download library.
+
+- Android now reserves system-bar and cutout space once. The web layout does not add it again, and already-fitted phone windows do not receive extra top or bottom padding.
+- The portrait player and Android Back handling reconnect to the current window after it is recreated, including when switching between gesture and button navigation.
+- The episode resolver now checks later servers when its initial choices fail, with up to six servers for each audio language. This applies across series and episode numbers.
+- A failed alternate-title search no longer discards successful AnimeParadise matches. Source status now reflects both completed provider checks.
+- Downloads uses the app's charcoal, white and orange palette. Downloaded episodes start with a two-column series grid, posters and episode counts; opening a series shows compact episode rows.
+- The queue keeps progress, pause, resume and retry controls visible. Saved rows retain Play, with file paths and folder controls under More; export failures and caption warnings remain visible.
+- The download library and manager share styling, including on older Android 11 WebViews. Android Back returns from episode rows to the series grid.
+
+Choose the ARM64 APK for the Realme 6. Both APKs retain the existing signing key and application ID and can update earlier releases.
+
+Validation passed: seven workspace typechecks, 238 frontend tests, 106 backend tests, 35 Android JVM tests, Rust command checks, and all 14 signed-APK acceptance cases on both Android 11 and Android 16. Validation uses public sample media and controlled catalog fixtures. Physical Realme 6 hardware and native playback of live anime-provider streams remain unverified. Live availability and English subtitles depend on the provider; no subtitle evidence is fabricated.
+
+[Download v0.2.10](https://github.com/PatzMain/Anirevia-Mobile/releases/tag/v0.2.10)
+
 ## v0.2.9 — 19 October 2026
 
 One mobile flow: Home and search → a single portrait page with video, episodes, downloads and More to Explore.
