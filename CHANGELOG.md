@@ -1,5 +1,24 @@
 # Patch notes
 
+## v0.2.11 — 21 October 2026
+
+Backend request optimization and general episode recovery, preserving the 0.2.10 mobile interface.
+
+- Repeated catalog, episode and source requests share in-flight work and short-lived caches. Leaving a page cancels unused native HTTP requests, including queued work. Catalog cancellation supports older Android 11 WebViews.
+- Provider document requests run with bounded concurrency, response sizes, deadlines and retry budgets. DUB-only resolution skips SUB-only provider work; validated results survive another provider reaching its deadline.
+- Every episode uses the same recovery policy. Playback retries eligible transient failures and can try up to three different compatible source URLs within a bounded recovery window, while retaining position, pause state and player preferences.
+- Download preparation and failed transfers can recover from compatible alternatives in the native background service. Recovery preserves the anime, actual episode number and audio choice. Pausing or removing a job prevents delayed work from restarting it.
+- Resuming a prepared download reuses its native request and partial cache without resolving its sources again. Explicit retry refreshes episode source URLs while retaining reusable catalog metadata.
+- Source changes discard source-specific burned-in-caption confirmation. Storage and permission failures remain visible without automatic redownloads; unsupported streams can fall back within the same bounded budget.
+
+A deterministic resolver fixture measured zero additional HTTP calls for a repeated warm lookup, versus six in 0.2.10, and 18 DUB-only calls versus 25. Full SUB/DUB discovery makes more cold requests than 0.2.10 because it prepares more validated fallback choices. These are request counts from injected responses, not phone timing or bandwidth measurements.
+
+Choose the ARM64 APK for the Realme 6. Both APKs retain the existing signing key and application ID and can update earlier releases.
+
+Validation passed: seven workspace typechecks, 271 frontend/service tests, 106 backend tests, 68 Android JVM tests, Rust command checks, and all 20 signed-APK acceptance cases on both Android 11 and Android 16. Validation uses public sample media and controlled catalog fixtures. Physical Realme 6 hardware and native playback of live anime-provider streams remain unverified. Recovery cannot supply an episode when every compatible provider fails.
+
+[Download v0.2.11](https://github.com/PatzMain/Anirevia-Mobile/releases/tag/v0.2.11)
+
 ## v0.2.10 — 21 October 2026
 
 Better phone spacing, episode source recovery, and a redesigned mobile download library.
