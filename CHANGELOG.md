@@ -1,5 +1,25 @@
 # Patch notes
 
+## v0.2.12 — 22 October 2026
+
+A refreshed mobile player and simpler episode downloads.
+
+- Compact portrait controls keep playback above the episode list. Tap the video to play; use the fullscreen button to expand it, and Back to return to portrait.
+- Fullscreen follows the approved design: outline controls on dark circular buttons, title and episode at the top, separate timestamps above the orange timeline, speed and caption language on the left, and settings and exit on the right.
+- Double-tap the right side to seek forward 10 seconds or the left side to rewind 10 seconds, matching the buttons. Seeking preserves paused or playing state, shows circular feedback, and respects screen lock and open panels.
+- Audio, captions, quality, speed and source choices use the app's charcoal and orange styling. Options open as a portrait bottom sheet or fullscreen side panel, with a compact speed grid.
+- Audio availability is checked for the selected episode. SUB-only, DUB-only, both and unknown availability are handled separately; confirmed unavailable choices are disabled. Source changes retain the current session and position, and a failed replacement keeps the current stream available.
+- The download selector uses compact episode, audio and quality controls. Add more episodes in place, review the selection, and skip episodes already saved or queued with the same audio choice.
+- Captions stay readable above the controls. Button touch targets follow their visible positions, timestamps fade with the player controls, and fullscreen settings avoid the system navigation-bar gutter.
+
+The recovery and request optimizations introduced in 0.2.11 remain in place. Both APKs preserve the existing signing key and application ID. Choose the ARM64 APK for the Realme 6; the universal APK also supports x86_64 devices. Android 7.0/API 24 or later is required.
+
+Validation passed: seven workspace typechecks, 286 frontend tests, 106 backend tests, 68 Android JVM tests, Rust command checks, and all 21 signed-APK acceptance cases on both Android 11 and Android 16.
+
+Validation uses Android 11 and Android 16 emulators, public sample video and controlled catalog fixtures. Physical Realme 6 hardware and native playback of live anime-provider streams remain unverified.
+
+[Download v0.2.12](https://github.com/PatzMain/Anirevia-Mobile/releases/tag/v0.2.12)
+
 ## v0.2.11 — 21 October 2026
 
 Backend request optimization and general episode recovery, preserving the 0.2.10 mobile interface.
