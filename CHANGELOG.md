@@ -1,5 +1,27 @@
 # Patch notes
 
+## v0.2.13 — 22 October 2026
+
+Browse, simpler mobile navigation, and updates inside Anirevia.
+
+- Five direct destinations: Home, My Lists, Browse, Library, and Settings. My Lists combines your existing Watchlist and History without changing saved data.
+- Browse brings discovery and search into one page, with compact custom filter dropdowns, genre shortcuts, removable filters, and Load more. Returning from an anime restores your filters and scroll position.
+- Library keeps downloaded series, offline playback, storage information, and queue access together. Settings groups updates, playback, downloads, and sources.
+- App-styled dropdowns replace Android's built-in selectors for Browse filters, Library audio, settings choices, and episode ranges. Back closes the topmost dropdown first.
+- Download app updates inside Anirevia with progress, cancel, and retry. Choose Install update when ready; Android still asks for installation confirmation. If needed, Allow installation opens Android's per-app setting and returns you to the downloaded update.
+- The update screen puts one recommended package first, with a full-width action, concise release notes, and expandable history. Downloaded packages are checked against the app's package ID, selected version, installed build, and signing certificates before the installer opens.
+- Interrupted update downloads can be retried. Completed downloads survive app restarts, including Android restarting the app after installation permission changes. A successfully installed update clears its cached installer offer.
+- Removed verified unused interface code, old artwork, and obsolete search and navigation flows. The portrait/fullscreen player, episode downloads, saved preferences, and existing recovery behavior are retained.
+
+Both APKs preserve the application ID and signing key. Choose ARM64 for the Realme 6; universal also supports x86_64 devices. Android 7.0/API 24 or later is required.
+
+Install 0.2.13 once using the APK or the previous updater. Its new in-app download and installation flow handles subsequent updates. Android's permission and installation confirmations remain required. Normal updates retain your settings, lists, progress, and offline episodes.
+
+Validation passed: seven workspace typechecks, 310 frontend tests, 106 backend tests, 72 Android JVM tests, the pinned Rust test command, and all 22 signed-APK acceptance cases on Android 16 plus its fresh-process installer-permission probe. Android 11 passed 21 of 22 cases; the real GitHub APK transfer exceeded the test’s 60-second deadline, so its additional granted-permission probe was not completed. Android 11 updater validation remains incomplete. The updater tests cover a real GitHub transfer, cancel/retry, rejected packages, cache recovery, permission return, and an intercepted installer handoff.
+
+Validation covers Android 11 and Android 16 emulators, controlled fixtures, and public sample media. Physical Realme 6 hardware and live anime-provider playback are not part of this validation.
+
+
 ## v0.2.12 — 22 October 2026
 
 A refreshed mobile player and simpler episode downloads.

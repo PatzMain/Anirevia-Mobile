@@ -1,32 +1,33 @@
 # Anirevia
 
-A personal anime streaming and offline viewing app for Android, built with Tauri Mobile, TypeScript and Rust.
+A personal anime streaming and offline viewing app for Android.
 
 **[Download the Android APK](https://github.com/PatzMain/Anirevia-Mobile/releases/latest)** · **[Patch notes](CHANGELOG.md)**
 
 ## Features
 
-- Browse anime with larger cover artwork, quick sort choices and compact filters.
-- Open an anime in one portrait page with video, episodes, downloads and More to Explore.
-- Change episodes and streaming sources in the same player, with saved progress and optional fullscreen.
-- Choose available episode audio and captions in app-styled player panels.
-- Double-tap either side to seek 10 seconds, with matching buttons and screen lock.
-- Select multiple episodes and manage a background download queue.
-- Choose a folder for MP4 downloads, with one subfolder per anime.
-- Play saved episodes from an offline library without a running PC.
+- Five destinations: Home, My Lists, Browse, Library, and Settings.
+- Discover anime and search in Browse, with custom filters and Load more.
+- Keep Watchlist, History, and saved progress together in My Lists.
+- Open anime in portrait with video, episodes, downloads, and More to Explore; expand with the fullscreen button.
+- Choose episode audio, captions, quality, and sources in app-styled panels, with 10-second buttons and double-tap seeking.
+- Select multiple episodes, manage the download queue, choose an export folder, and play saved episodes offline.
+- Download app updates inside Anirevia, follow progress, retry if needed, then confirm installation with Android.
 
 ## Install
 
-Open the latest release. For a compatible ARM64 phone, choose the smaller `Anirevia-Mobile-0.2.12-arm64-v8a.apk`; the `Anirevia-Mobile-0.2.12-universal.apk` also supports x86_64 emulators. Open the APK on your device to install. Android may ask you to allow installation from your browser or file manager.
+Choose **Anirevia-Mobile-0.2.13-arm64-v8a.apk** for a compatible ARM64 phone such as the Realme 6. The **Anirevia-Mobile-0.2.13-universal.apk** also supports x86_64 devices. Open the APK on your device and follow Android's prompts. Requires Android 7.0 or later and an updated Android System WebView.
 
-Requires Android 7.0 or later and an updated Android System WebView. The APK supports ARM64 phones and x86_64 emulators. Checksums and detailed installation notes accompany each release.
+Install 0.2.13 once using the APK or the older updater. Future updates download inside the app through **Settings → App updates**. Android may ask you to allow Anirevia to install updates and always requires installation confirmation. The app checks its package identity and signing certificates before opening the installer. Normal updates preserve your settings, lists, progress, and offline episodes.
 
 ## Current status
 
-Version 0.2.12 refreshes the mobile player with compact portrait controls, an explicit fullscreen action, outline transport controls and double-tap seeking. App-styled sheets cover audio, captions, quality, speed and sources. Episode audio availability and a simpler download selector make it easier to choose and add episodes. The request and recovery improvements from 0.2.11 remain in place.
+Version 0.2.13 adds the five-tab mobile navigation, combined My Lists, Browse discovery and search, reusable custom dropdowns, a reorganized Library and Settings, and a simpler in-app updater. The 0.2.12 player controls and episode download improvements remain in place.
 
-Choose a download folder in Settings or before starting a batch. Episodes are saved as MP4 files inside a separate folder for each anime, while an app-managed copy supports offline playback. Existing offline episodes can also be saved to your folder, and failed folder saves can be retried without downloading again. Files in the selected folder remain when the app or its offline copy is removed. External English WebVTT captions save beside the video; manifest-only captions remain available in the app and missing exported captions are labelled. Android may limit background work; reopening and retrying can be necessary.
+Validation passed: 310 frontend tests, 106 backend tests, 72 Android JVM checks, seven workspace typechecks, Rust command checks, and all 22 signed-APK acceptance cases plus the installer-permission probe on Android 16. Android 11 passed 21 of 22 cases; its real GitHub APK transfer exceeded the test’s 60-second deadline. The additional Android 11 granted-permission probe remains incomplete. Android 11 updater validation remains incomplete. Physical Realme 6 hardware and live anime-provider playback remain unverified.
+
+Android can limit background work; reopening and retrying a download may be necessary. Shared exported files remain separate from the app-managed offline library. Updates never uninstall the app or clear user data.
 
 ## About this repository
 
-This repository contains release downloads, introductory documentation and patch notes. Application source code, build files, credentials and signing keys are not published here.
+This repository contains release downloads, introductory documentation, and patch notes. Application source code, build files, credentials, and signing keys remain local.
