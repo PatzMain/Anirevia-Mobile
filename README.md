@@ -24,7 +24,9 @@ Install 0.2.13 once using the APK or the older updater. Future updates download 
 
 Version 0.2.13 adds the five-tab mobile navigation, combined My Lists, Browse discovery and search, reusable custom dropdowns, a reorganized Library and Settings, and a simpler in-app updater. The 0.2.12 player controls and episode download improvements remain in place.
 
-Validation passed: 310 frontend tests, 106 backend tests, 72 Android JVM checks, seven workspace typechecks, Rust command checks, and all 22 signed-APK acceptance cases plus the installer-permission probe on Android 16. Android 11 passed 21 of 22 cases; its real GitHub APK transfer exceeded the test’s 60-second deadline. The additional Android 11 granted-permission probe remains incomplete. Android 11 updater validation remains incomplete. Physical Realme 6 hardware and live anime-provider playback remain unverified.
+At publication (22 October 2026): 310 frontend tests, 106 backend tests, 72 Android JVM checks, seven workspace typechecks, Rust command checks, and all 22 signed-APK acceptance cases plus the installer-permission probe on Android 16. Android 11 passed 21 of 22 cases; its real GitHub APK transfer exceeded the test’s 60-second deadline. The additional Android 11 granted-permission probe remains incomplete. Android 11 updater validation remains incomplete. Physical Realme 6 hardware and live anime-provider playback remain unverified.
+
+**Follow-up validation — 23 October 2026:** Android 11 now passes all 22 signed-APK acceptance cases and the separate granted-permission updater probe. The transfer test has a bounded 180-second network deadline, byte-progress diagnostics, and an explicit complete-APK byte check. The original timeout did not recur. This was a test-only correction; the published 0.2.13 APKs and their checksums are unchanged. Physical Realme 6 and live-provider limits still apply.
 
 Android can limit background work; reopening and retrying a download may be necessary. Shared exported files remain separate from the app-managed offline library. Updates never uninstall the app or clear user data.
 
