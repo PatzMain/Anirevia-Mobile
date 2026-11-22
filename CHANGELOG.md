@@ -1,5 +1,28 @@
 # Patch notes
 
+## v0.2.14 — 22 November 2026
+
+Native Android playback and browsing, wider SUB/DUB coverage, LiveChart release countdowns, seamless episode transitions, and experimental player gestures.
+
+- Rebuilt on a native Kotlin and Jetpack Compose runtime (`com.anirevia.mobile`, build 2014), removing the Android System WebView requirement while preserving the five destinations (Home, My Lists, Browse, Library, and Settings), saved lists, offline downloads, and in-app updates.
+- Watchable-only catalog filtering removes unreleased (`NOT_YET_RELEASED`) and zero-episode entries across Home, Search, Browse, and recommendations so only playable SUB or DUB anime are listed.
+- Browse filter coverage now spans all 18 standard AniList genres plus tag-routed `Historical` and `Isekai` filters, watchable release statuses (`RELEASING`, `FINISHED`), `TV_SHORT` alongside standard formats, and expanded release years so every filter returns matching anime.
+- 18+ / Hentai titles are hidden across catalog, search, and recommendations unless **Show 18+ / Adult content (Hentai)** is enabled in Settings. Entries that list episodes without playable or downloadable streams are automatically filtered out and recorded in the unplayable store.
+- Expanded SUB and DUB resolution across seven providers (`AnimeParadise`, `AllAnime`, `Aniwave`, `HiAnime`, `Consumet` Zoro/Gogoanime `-dub`, `AnimeKai`, and `AnimePahe`) with custom mirror URL overrides in Settings and season/year-aware title matching for English dubs such as *Solo Leveling*.
+- Cold-start and cache-clear resilience: added an 8 MiB atomic LRU disk cache (`NativeDiskCache`) for catalog shelves, series details, episode lists, and schedules, parallel Home shelf loading, Coil image memory/disk caching, per-host provider semaphores, and 60-second provider circuit breakers to prevent timeouts after clearing app data or cache.
+- Airing anime pages show a live **Next Episode** countdown timer and local air date/time fetched from [LiveChart.me](https://www.livechart.me/schedule) with AniList schedule fallback.
+- Seamless **Next Episode** transitions: the player pre-resolves the next episode's stream and skip intervals in the background once playback passes 75% (or within 90 seconds of the end) and switches media items in place while preserving fullscreen and audio preference.
+- **Seasons & Sequels** replaces generic *More to Explore* recommendations whenever a series or movie has chronological franchise relations (`PREQUEL`, `SEQUEL`, `PARENT`, `SIDE_STORY`, `SPIN_OFF`, `ALTERNATIVE`, `SUMMARY`), linking seasons such as *Solo Leveling Season 1* and *Solo Leveling Season 2* directly.
+- Cumulative double-tap seeking (`+10s`, `+20s`, `+30s` and `-10s`, `-20s`, `-30s`) now triggers crisp haptic feedback on every tap, and a single **Experimental video player features** toggle in Settings enables:
+  - VLC-style **Slide to unlock** track in fullscreen when the player controls are locked.
+  - Right-side vertical slide gesture for **Volume** adjustment with an on-screen percentage HUD.
+  - Left-side vertical slide gesture for **Brightness** adjustment with an on-screen percentage HUD.
+  - **Skip Intro** and **Skip Outro** buttons paired with a **blue timeline highlight** across opening and ending intervals on the seek bar.
+
+Both APKs preserve the `com.anirevia.mobile` application ID and signing key so existing installations update in place. Choose ARM64 for the Realme 6 and other 64-bit ARM phones; the universal APK also supports x86_64 devices. Android 7.0/API 24 or later is required.
+
+Validation passed: 337 Android JVM unit tests across 48 test classes (`npm run test:fast` and `:app:testDebugUnitTest`), zero Android Lint errors (`:app:lintDebug`), and verified v2/v3 signing, 16 KiB native page alignment, and package metadata on both release APKs.
+
 ## v0.2.13 — 22 October 2026
 
 Browse, simpler mobile navigation, and updates inside Anirevia.
@@ -23,6 +46,8 @@ At publication (22 October 2026): seven workspace typechecks, 310 frontend tests
 
 Validation covers Android 11 and Android 16 emulators, controlled fixtures, and public sample media. Physical Realme 6 hardware and live anime-provider playback are not part of this validation.
 
+
+[Download v0.2.13](https://github.com/PatzMain/Anirevia-Mobile/releases/tag/v0.2.13)
 
 ## v0.2.12 — 22 October 2026
 

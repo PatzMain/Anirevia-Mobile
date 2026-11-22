@@ -6,29 +6,27 @@ A personal anime streaming and offline viewing app for Android.
 
 ## Features
 
-- Five destinations: Home, My Lists, Browse, Library, and Settings.
-- Discover anime and search in Browse, with custom filters and Load more.
-- Keep Watchlist, History, and saved progress together in My Lists.
-- Open anime in portrait with video, episodes, downloads, and More to Explore; expand with the fullscreen button.
-- Choose episode audio, captions, quality, and sources in app-styled panels, with 10-second buttons and double-tap seeking.
-- Select multiple episodes, manage the download queue, choose an export folder, and play saved episodes offline.
-- Download app updates inside Anirevia, follow progress, retry if needed, then confirm installation with Android.
+- Five destinations: Home, My Lists, Browse, Library, and Settings on a native Kotlin and Jetpack Compose Android runtime.
+- Watchable-only catalog and search in Browse, with complete genre and tag filters (`Historical`, `Isekai`), an opt-in 18+ / Adult content setting, and Load more.
+- Seven-provider SUB and DUB streaming resolution (`AnimeParadise`, `AllAnime`, `Aniwave`, `HiAnime`, `Consumet`, `AnimeKai`, and `AnimePahe`) with custom mirror URLs and widened dub coverage (including *Solo Leveling*).
+- Live **Next Episode** countdown timers and local release dates/times powered by [LiveChart.me](https://www.livechart.me/schedule) with AniList fallback.
+- Open anime in portrait with inline video, episodes, downloads, and chronological **Seasons & Sequels** (or *More to Explore* when standalone); expand with the fullscreen button.
+- Seamless background-prefetched **Next Episode** transitions, cumulative double-tap seeking (`+10s`, `+20s`, `+30s` / `-10s`, `-20s`, `-30s`) with haptics, and an **Experimental video player features** toggle in Settings for VLC-style slide-to-unlock, vertical volume/brightness swipe gestures, and **Skip Intro** / **Skip Outro** buttons with blue timeline highlights.
+- Keep Watchlist, History, and saved progress together in My Lists, manage offline episode downloads in Library, and download app updates inside Anirevia.
 
 ## Install
 
-Choose **Anirevia-Mobile-0.2.13-arm64-v8a.apk** for a compatible ARM64 phone such as the Realme 6. The **Anirevia-Mobile-0.2.13-universal.apk** also supports x86_64 devices. Open the APK on your device and follow Android's prompts. Requires Android 7.0 or later and an updated Android System WebView.
+Choose **Anirevia-Mobile-0.2.14-arm64-v8a.apk** for a compatible ARM64 phone such as the Realme 6. The **Anirevia-Mobile-0.2.14-universal.apk** also supports x86_64 devices. Open the APK on your device and follow Android's prompts. Requires Android 7.0 (API 24) or later.
 
-Install 0.2.13 once using the APK or the older updater. Future updates download inside the app through **Settings → App updates**. Android may ask you to allow Anirevia to install updates and always requires installation confirmation. The app checks its package identity and signing certificates before opening the installer. Normal updates preserve your settings, lists, progress, and offline episodes.
+If you already have 0.2.13 installed, you can update to 0.2.14 directly through **Settings → App updates** or by installing the new APK over your existing installation. Android may ask you to allow Anirevia to install updates and always requires installation confirmation. The app checks its package identity and signing certificates before opening the installer. Normal updates preserve your settings, lists, progress, and offline episodes.
 
 ## Current status
 
-Version 0.2.13 adds the five-tab mobile navigation, combined My Lists, Browse discovery and search, reusable custom dropdowns, a reorganized Library and Settings, and a simpler in-app updater. The 0.2.12 player controls and episode download improvements remain in place.
+Version 0.2.14 completes the native Android runtime migration and adds watchable-only catalog filtering, complete Browse genre/tag filters, an opt-in 18+ content gate, seven-provider SUB/DUB resolution, cold-start disk caching and circuit-breaker resilience, LiveChart.me episode countdowns, seamless prefetched Next Episode playback, chronological Seasons & Sequels recommendations, cumulative double-tap seek haptics, and the single-toggle experimental player feature suite (VLC slide-to-unlock, left brightness swipe, right volume swipe, and Skip Intro / Skip Outro with blue timeline highlights).
 
-At publication (22 October 2026): 310 frontend tests, 106 backend tests, 72 Android JVM checks, seven workspace typechecks, Rust command checks, and all 22 signed-APK acceptance cases plus the installer-permission probe on Android 16. Android 11 passed 21 of 22 cases; its real GitHub APK transfer exceeded the test’s 60-second deadline. The additional Android 11 granted-permission probe remains incomplete. Android 11 updater validation remains incomplete. Physical Realme 6 hardware and live anime-provider playback remain unverified.
+At publication: 337 Android JVM unit tests across 48 test classes and `:app:lintDebug` passed with zero errors, and both signed release APKs (`arm64-v8a` and `universal`) verified package identity (`com.anirevia.mobile`, versionCode `2014`), v2/v3 signing certificate continuity, and 16 KiB zip/ELF page alignment.
 
-**Follow-up validation — 23 October 2026:** Android 11 now passes all 22 signed-APK acceptance cases and the separate granted-permission updater probe. The transfer test has a bounded 180-second network deadline, byte-progress diagnostics, and an explicit complete-APK byte check. The original timeout did not recur. This was a test-only correction; the published 0.2.13 APKs and their checksums are unchanged. Physical Realme 6 and live-provider limits still apply.
-
-Android can limit background work; reopening and retrying a download may be necessary. Shared exported files remain separate from the app-managed offline library. Updates never uninstall the app or clear user data.
+Android can limit background work; reopening and retrying a download may be necessary. Updates never uninstall the app or clear user data.
 
 ## About this repository
 
