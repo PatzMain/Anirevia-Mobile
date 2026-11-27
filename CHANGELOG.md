@@ -1,5 +1,17 @@
 # Patch notes
 
+## v0.2.18 — 27 November 2026
+
+A cleaner Watch screen, a smarter Settings page, and a major upgrade to the video player across both portrait and landscape modes.
+
+- **Switch between SUB and DUB right inside the player**: Easily switch between Japanese (SUB) and English (DUB) audio and streaming servers while watching, with faster audio and subtitle loading.
+- **New Slide-to-Unlock screen lock**: Locking the player now shows a sleek **SWIPE TO UNLOCK** slider along with the episode title and timeline (with intro and outro markers) whenever you tap the screen, then fades completely out of sight while you watch.
+- **Improved Caption Style picker**: Customize subtitle size and theme with a live preview and clear highlights showing your active selections—saved automatically across episodes and fullscreen changes.
+- **Refreshed Skip Intro & Skip Outro button**: Updated to a clean white pill button with a skip icon so it's easier to spot and tap.
+- **Floating Save button in Settings**: Replaced the bottom "Save preferences" button with an animated floating **Save** button that only appears when you change a setting.
+- **Cleaner Watch screen**: Removed unnecessary on-screen buttons (Auto-Select, Change source, and Select downloads)—best server selection now runs automatically in the background, and downloading episodes works directly from the Download button.
+
+Update in-app through **Settings → App updates**, or install the ARM64 APK (most modern Android phones) or Universal APK (Android 7.0+ devices).
 ## v0.2.17 — 27 November 2026
 
 Hotfix restoring Aniwave DUB and SUB playback on *Solo Leveling Season 2* and episodes with long provider link tokens.
