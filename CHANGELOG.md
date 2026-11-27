@@ -1,5 +1,24 @@
 # Patch notes
 
+## v0.2.16 — 27 November 2026
+
+Improved DUB/SUB streaming reliability, smarter Auto-Select server fallback, and expanded anime search matching.
+
+- **Auto-Select Server Mode (Default ON)**: Prioritizes the best healthy server matching your preferred audio (DUB or SUB) and automatically falls back to the best SUB server when DUB is unavailable for an episode, without forcing manual server selection. Includes an **Auto-Select: ON/OFF** toggle and inline fallback notice on the Watch screen.
+- **Fixed DUB provider race condition**: SUB-only providers no longer cut off DUB resolution during fast-quorum fetching when DUB is preferred, and the grace window was increased to `6s` so DUB servers (such as Aniwave for *Solo Leveling* and *Overgeared*) resolve reliably.
+- **Expanded search matching**: Added possessive-apostrophe fallback queries in Browse and Search so queries like `Knights & Magic` find *Knight's & Magic* and similar punctuated titles.
+
+Both APKs preserve the `com.anirevia.mobile` application ID (build `2016`) and production signing key so existing installations update in place. Choose ARM64 for 64-bit ARM phones; the universal APK also supports x86_64 devices. Android 7.0/API 24 or later is required.
+
+## v0.2.15 — 23 November 2026
+
+Reliability, stability, and speed release fixing the Settings page crash, AniList GraphQL HTTP 400 and timeout failures, and slow multi-server loading across the native Android app.
+
+- Fixed the Settings page crash in production builds (`com.anirevia.mobile`) by removing a nested infinite `verticalScroll` layout and replacing reflection-based `OfficialUpdatesController` creation with an explicit R8-safe factory.
+- Hardened Settings and in-app updater stability (avoiding stuck `Checking…` states, offloading `SharedPreferences` and storage scans to `Dispatchers.IO`).
+- Fixed AniList GraphQL HTTP 400 errors and tightened `OkHttpTransport` timeouts, `Retry-After` handling, and stale-cache fallback on Home bootstrap.
+- Added bounded fast-quorum multi-server resolution, AllAnime GraphQL POST memory after HTTP 403, and immediate circuit-breaker trips on DNS/TLS/schema failures.
+
 ## v0.2.14 — 22 November 2026
 
 Native Android playback and browsing, wider SUB/DUB coverage, LiveChart release countdowns, seamless episode transitions, and experimental player gestures.
