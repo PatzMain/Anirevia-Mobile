@@ -1,5 +1,14 @@
 # Patch notes
 
+## v0.2.17 — 27 November 2026
+
+Hotfix restoring Aniwave DUB and SUB playback on *Solo Leveling Season 2* and episodes with long provider link tokens.
+
+- **Fixed Aniwave `sourceId` length rejection**: Compacted long Aniwave `data-link-id` hex tokens (>64 chars) into a deterministic `sha256-` digest so `NativeMediaIdentity`'s 512-character limit never silently drops Aniwave DUB/SUB streams on episodes like *Solo Leveling Season 2 -Arise from the Shadow-*.
+- **Added regression test**: Verified 600-character Aniwave link IDs stay safely under the identity limit (`346` JVM unit tests passing).
+
+Both APKs preserve the `com.anirevia.mobile` application ID (build `2017`) and production signing key so existing `0.2.16` installations update in place. Choose ARM64 for 64-bit ARM phones; the universal APK also supports x86_64 devices. Android 7.0/API 24 or later is required.
+
 ## v0.2.16 — 27 November 2026
 
 Improved DUB/SUB streaming reliability, smarter Auto-Select server fallback, and expanded anime search matching.
