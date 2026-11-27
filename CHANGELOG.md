@@ -1,5 +1,24 @@
 # Patch notes
 
+## v0.3.0 â€” 27 November 2026
+
+A major polish and performance milestone featuring faster startup, smart auto-landscape rotation, a fullscreen offline player, merged timeline markers, crisp haptics, and cleaner screens across the whole app.
+
+- **Smoother app launch & instant Home**: Added a dark branded launch screen on Android 12+, instant cached Home screen loading with pull-to-refresh, and removed the startup "Loading saved listsâ€¦" banner flash.
+- **Cleaner app switching**: Switching away while watching now pauses playback cleanly and keeps controls ready when you return, restores fullscreen smoothly, and opening the app icon always brings you right back to your current screen.
+- **Smart portrait & auto-landscape rotation**: Home, My Lists, Browse, Library, and Settings stay locked in portrait. While watching an episode, tilting your phone sideways automatically switches to fullscreen landscape (respecting Android's Auto-Rotate setting), and tilting upright returns to portrait unless screen lock is active.
+- **Fullscreen Offline Player**: Opening a downloaded episode from **Library** now launches straight into fullscreen landscape with Next/Previous downloaded episode navigation.
+- **Merged intro & outro timeline markers**: Opening and ending segments now sit seamlessly inside the main progress bar and smoothly fill with orange as you watch.
+- **Faster video start, instant rewind & crisp haptics**: Videos start faster and 10â€“30 second rewinds happen instantly without re-buffering, paired with subtle haptic feedback on seek taps, 2Ã— speed hold, Slide-to-Unlock, Skip Intro/Outro, bookmarks, and saving settings.
+- **Standard upgraded player**: Swipe to Unlock, Skip Intro/Outro pills, and merged timeline markers are now built in by default (no longer behind an "Experimental" toggle), with a clean **Volume & brightness gestures** switch in Playback preferences.
+- **Tidier Browse, Library, Settings & Player Audio menu**:
+  - **Browse**: **Quick collections** and **Browse by Genre** now stay tucked inside **Filters** by default so the anime grid appears immediately.
+  - **Library**: Removed the extra subheading under the Library title.
+  - **Settings â†’ App updates**: Redesigned with a clear update badge, readable file sizes, and collapsible patch notes for each version.
+  - **Video player**: Simplified the **Audio** menu by removing the duplicate Captions item.
+
+Update in-app through **Settings â†’ App updates**, or install the ARM64 APK (most modern Android phones) or Universal APK (Android 7.0+ devices).
+
 ## v0.2.19 â€” 27 November 2026
 
 Player polish, smoother rotation, simpler server selection, and important gesture fixes.
