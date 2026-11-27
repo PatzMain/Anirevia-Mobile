@@ -1,5 +1,18 @@
 # Patch notes
 
+## v0.2.19 â€” 27 November 2026
+
+Player polish, smoother rotation, simpler server selection, and important gesture fixes.
+
+- **Fixed Slide-to-Unlock & gesture overlays**: Dragging the **SWIPE TO UNLOCK** slider now unlocks smoothly without disappearing mid-swipe, and the on-screen indicators for **2Ã— speed**, **volume**, and **brightness** gestures are back and clearly visible.
+- **Fixed 2Ã— speed staying stuck**: Holding the right side of the video player for 2Ã— speed now always returns to your normal playback speed as soon as you let go.
+- **Smoother portrait & fullscreen switching**: Switching between portrait and landscape while watching now transitions cleanly without restarting or resetting the video player.
+- **Simpler server labels**: Replaced technical source and provider names with clean **Server 1**, **Server 2**, **Server 3**, **Server 4** options in the **Audio & server** picker and inside the video player, and removed the technical server list from **Settings**.
+- **Cleaner portrait Watch screen**: Removed the extra episode status banner below the player for a tidier layout.
+- **No more "saved source is no longer available" errors**: If a previously saved stream expires, Anirevia now automatically falls back to the best available working server.
+
+Update in-app through **Settings â†’ App updates**, or install the ARM64 APK (most modern Android phones) or Universal APK (Android 7.0+ devices).
+
 ## v0.2.18 — 27 November 2026
 
 A cleaner Watch screen, a smarter Settings page, and a major upgrade to the video player across both portrait and landscape modes.
