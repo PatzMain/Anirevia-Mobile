@@ -1,5 +1,15 @@
 # Patch notes
 
+## v0.3.4 — 28 November 2026
+
+A hotfix resolving in-app playback of downloaded single-`.mp4` episodes across Android storage providers and playback quality settings.
+
+- **Reliable direct SAF MP4 playback**: Replaced sole reliance on `ContentDataSource`'s wildcard typed file descriptor lookup with a direct seekable `ParcelFileDescriptor` + `FileChannel` reader (with `ContentDataSource` fallback) for fast, dependable seeking across Android OEM storage providers.
+- **Unrestricted offline video & audio track selection**: Cleared online streaming resolution caps during offline playback so downloaded 1080p episodes always play even if your streaming quality preference is set lower.
+- **Improved folder verification & resume behavior**: Added a directory-listing fallback for nested anime folders on Android 10+, restarted episodes from `0:00` when watch history is already at 95%+, and surfaced clear diagnostic error codes if offline playback ever fails.
+
+Update in-app through **Settings → App updates**, or install the ARM64 APK (most modern Android phones) or Universal APK (Android 7.0+ devices).
+
 ## v0.3.3 — 28 November 2026
 
 A critical hotfix fixing the `"HLS remux produced no playable video track"` error during episode downloads.
