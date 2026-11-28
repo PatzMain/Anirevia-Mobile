@@ -1,5 +1,24 @@
 # Patch notes
 
+## v0.3.1 — 28 November 2026
+
+A focused reliability update that rebuilds the download backend to save one clean `.mp4` file per episode or movie and fixes offline mode playback across the app.
+
+- **One `.mp4` file per episode or movie**: Rebuilt the download engine to remux HLS streams (including AES-128 encrypted and separate-audio streams) and save direct MP4 sources into a single playable `.mp4` file instead of scattering multiple segment files in your download folder.
+- **Clean, consistent file naming**:
+  - `AnimeTitle_E01.mp4` for 2-digit episode series
+  - `AnimeTitle_E001.mp4` for 3-digit episode series
+  - `AnimeTitle_E0001.mp4` for 4-digit episode series
+  - `MovieTitle.mp4` for movies (saved directly in your chosen download folder)
+- **Faster & more reliable downloads**: Added concurrent segment prefetching with automatic per-segment retries, resilient HLS quality selection, improved server selection, smooth percentage progress in Library, and fixed a retry race condition.
+- **Working Offline Mode & Offline Playback**:
+  - Fixed connectivity detection when going offline so Offline Mode activates immediately.
+  - Loaded your downloaded library right at startup so downloaded episodes are ready across **Home**, **Browse**, **My Lists**, **Watch**, and **Library** with zero internet.
+  - Opening a series or tapping **Continue watching** / **History** while offline now shows and plays your downloaded episodes directly.
+  - Offline playback now reads your single `.mp4` directly for fast seeking, serves saved captions completely offline, and restores your watch-history resume position.
+
+Update in-app through **Settings → App updates**, or install the ARM64 APK (most modern Android phones) or Universal APK (Android 7.0+ devices).
+
 ## v0.3.0 â€” 27 November 2026
 
 A major polish and performance milestone featuring faster startup, smart auto-landscape rotation, a fullscreen offline player, merged timeline markers, crisp haptics, and cleaner screens across the whole app.
