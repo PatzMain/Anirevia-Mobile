@@ -1,5 +1,17 @@
 # Patch notes
 
+## v0.3.2 — 28 November 2026
+
+A download stability update with automatic multi-server failover, smarter CDN retry/throttling handling, remuxer reliability fixes, and smoother progress stages.
+
+- **Automatic multi-server download failover**: If a streaming server fails during a download, the queue now automatically switches to the next ranked server instead of failing the episode immediately.
+- **Better CDN compatibility & adaptive throttling**: Uses the standard playback User-Agent, supports compressed playlists and segments, and honors HTTP `429`/`503` `Retry-After` backoff windows when CDNs rate-limit requests.
+- **Stronger MP4 remuxing reliability**: Safely handles missing/unset timestamps (`C.TIME_UNSET`), ensures codec configuration (`csd-0`) is captured before muxing starts, and prevents audio-heavy opening segments from starting the muxer without the video track.
+- **Clearer, monotonic download progress**: Smoothly reports **Downloading**, **Processing**, and **Verifying** stages with accurate progress scaling that never jumps to 100% early or flickers backward.
+- **Android storage verification fix**: Falls back to `AssetFileDescriptor` size checks when a storage provider briefly reports `0` bytes right after saving a newly finished `.mp4`.
+
+Update in-app through **Settings → App updates**, or install the ARM64 APK (most modern Android phones) or Universal APK (Android 7.0+ devices).
+
 ## v0.3.1 — 28 November 2026
 
 A focused reliability update that rebuilds the download backend to save one clean `.mp4` file per episode or movie and fixes offline mode playback across the app.
