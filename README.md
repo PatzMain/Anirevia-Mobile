@@ -21,11 +21,11 @@ A fast, clean anime streaming and offline viewing app for Android.
 ## How to Install or Update
 
 1. Download the APK from the **[latest release](https://github.com/PatzMain/Anirevia-Mobile/releases/latest)**:
-   - **`Anirevia-Mobile-0.3.2-arm64-v8a.apk`** — Best choice for most modern Android phones.
-   - **`Anirevia-Mobile-0.3.2-universal.apk`** — Works on all supported Android 7.0+ phones, tablets, and emulators.
+   - **`Anirevia-Mobile-0.3.3-arm64-v8a.apk`** — Best choice for most modern Android phones.
+   - **`Anirevia-Mobile-0.3.3-universal.apk`** — Works on all supported Android 7.0+ phones, tablets, and emulators.
 2. Open the downloaded APK and follow Android's install prompt.
 
-**Already have Anirevia installed?** Open **Settings → App updates** inside the app to update directly to **0.3.2**—your watchlist, watch history, settings, and downloaded episodes are all kept safe.
+**Already have Anirevia installed?** Open **Settings → App updates** inside the app to update directly to **0.3.3**—your watchlist, watch history, settings, and downloaded episodes are all kept safe.
 
 ## About This Repository
 
