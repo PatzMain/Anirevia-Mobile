@@ -1,5 +1,15 @@
 # Patch notes
 
+## v0.3.3 — 28 November 2026
+
+A critical hotfix fixing the `"HLS remux produced no playable video track"` error during episode downloads.
+
+- **Fixed HLS-to-MP4 remuxer**: Switched `TsExtractor` to HLS streaming mode (`MODE_HLS` with unknown stream length) and drained its full internal packet buffer per segment so all video and audio frames are properly extracted and muxed into the single `.mp4` file instead of failing at the end of a download.
+- **Preserved opening keyframes**: Buffered elementary stream bytes arriving before codec format initialization (H.264/H.265 AUD/SPS/PPS/first IDR) per track so initial keyframes are never dropped or underflowed.
+- **Fail-fast server failover**: Detects unplayable HLS streams after the first few segments so the queue immediately switches to the next ranked server instead of downloading an entire episode first.
+
+Update in-app through **Settings → App updates**, or install the ARM64 APK (most modern Android phones) or Universal APK (Android 7.0+ devices).
+
 ## v0.3.2 — 28 November 2026
 
 A download stability update with automatic multi-server failover, smarter CDN retry/throttling handling, remuxer reliability fixes, and smoother progress stages.
